@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lanchonete 3 Irmãos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        darkMode: 'class', // Enable dark mode
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Poppins', 'sans-serif'],
+            },
+            colors: {
+              primary: '#003366',
+              accent: '#1E90FF',
+              
+              // Light Theme (Default)
+              background: '#F9FAFB',
+              surface: '#FFFFFF',
+              'text-primary': '#1F2937',
+              'text-secondary': '#6B7280',
+              'border-color': '#E5E7EB',
+
+              // Dark Theme Colors
+              'dark-background': '#121212',
+              'dark-surface': '#1C1C1C',
+              'dark-primary': '#003366', // Can be aliased for dark mode context
+              'dark-text-primary': '#E0E0E0',
+              'dark-text-secondary': '#A0A0A0',
+              'dark-border': '#374151',
+            },
+          },
+        },
+      }
+    </script>
+    <script type="importmap">
+    {
+      "imports": {
+        "react/": "https://aistudiocdn.com/react@^19.2.0/",
+        "react": "https://aistudiocdn.com/react@^19.2.0",
+        "recharts": "https://aistudiocdn.com/recharts@^3.3.0",
+        "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/"
+      }
+    }
+    </script>
+    <style>
+      body {
+        font-family: 'Poppins', sans-serif;
+      }
+      /* Ensure smooth color transitions */
+      body, .bg-background, .bg-surface {
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+      @media print {
+        body * {
+          visibility: hidden;
+        }
+        #printable-area, #printable-area * {
+          visibility: visible;
+        }
+        #printable-area {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          color: #000; /* Ensure text is black for printing */
+        }
+        .no-print {
+          display: none;
+        }
+         /* Ensure dark mode styles are not printed */
+        .dark {
+            color-scheme: light;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
